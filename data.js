@@ -1,8 +1,8 @@
 var APP_DATA = {
   "scenes": [
     {
-      "id": "0-20250315_p",
-      "name": "20250315_p",
+      "id": "0-panorama_f",
+      "name": "panorama_f",
       "levels": [
         {
           "tileSize": 256,
