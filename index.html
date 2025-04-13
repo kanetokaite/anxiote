@@ -2,18 +2,24 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>OAuth Callback</title>
+  <title>OAuth Callback Debug</title>
 </head>
 <body>
+  <h2>Received Query Parameters</h2>
+  <div id="debug"></div>
+
   <script>
-    // if URL : code=AUTH_CODE&state=XYZ
-    const params = new URLSearchParams(window.location.search);
-    const authorizationCode = params.get('code');
-    if (authorizationCode) {
-      console.log("code responsed", authorizationCode);
-    } else {
-      console.error("no auth code");
+    const searchParams = new URLSearchParams(window.location.search);
+    let debugHTML = '<ul>';
+
+    for (const [key, value] of searchParams.entries()) {
+      debugHTML += `<li><strong>${key}:</strong> ${value}</li>`;
     }
+    debugHTML += '</ul>';
+
+    document.getElementById('debug').innerHTML = debugHTML;
+
+    console.log("entire URL:", window.location.href);
   </script>
 </body>
 </html>
